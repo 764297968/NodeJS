@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="http://www.w3school.com.cn/jquery/jquery-1.11.1.min.js"></script>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+
+</body>
+</html>
+<script>
+    var app = angular.module("myapp", []);
+    app.controller("myctrl", function ($scope) {
+        $.getJSON("/", function (res) {
+            console.log(res);
+        })
+    });
+</script>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="http://www.w3school.com.cn/jquery/jquery-1.11.1.min.js"></script>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+  <div ng-controller="myctrl">
+      <img src="{{item}}" width="200" height="200" ng-repeat="item in Data"  />
+  </div>
+</body>
+</html>
+<script>
+    var app = angular.module("myapp", []);
+    app.controller("myctrl", function ($scope) {
+        var url = "ftp://192.168.1.106:2121/BaiduNetdisk/%CE%C4%B5%B5/%BB%E9%C9%B4%D5%D5/DSC_";
+        $scope.Data = [];
+        //6911
+        for (var i = 6484; i < 6511; i++)
+        {
+            $scope.Data.push(url + i+".JPG");
+        }
+        console.log($scope.Data);
+        
+    });
+</script>

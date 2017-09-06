@@ -1,0 +1,24 @@
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  #{item}
+
+ table
+  each it in data
+   tr
+   td=it.LogId
+   td=it.Event_Type
+   td=it.TIMESTAMP
+   td=it.EventCategory
+   td=it.Event_ID
+   td=it.ComputerName
+   td=it.Mac_Address
+   td=it.UserName
+   td=it.SOURCETYPE
+   td=it.Source
+   td=it.Description
+   td=it.CollectDate
+
+ 
