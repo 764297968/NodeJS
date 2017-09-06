@@ -1,0 +1,40 @@
+﻿
+link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+
+block content
+  h1= title
+  p Welcome to #{title}
+div(style="margin:0 auto;width:80%") 
+ a(class="btn btn-default"  data-toggle="modal" data-target="#addmodal" ) 添加
+ br
+ br
+ table(  class="table table-striped table-hover table-bordered")
+  tr
+    td 编号 
+    td 名称
+    td 描述
+    td 状态
+    td 操作
+  each item in data
+     tr
+        td=item.Id
+        td=item.Name
+        td=item.Description
+        td=item.Status
+        td 操作
+
+div(class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+    div(class="panel panel-default")
+        div(class="panel-heading")
+            h3(class="panel-title") 添加角色
+        div(class="panel-body")
+            form(method="post" id="addStoreForm" action="/Site_Store/AddSite_Store" class="form-horizontal" role="form")
+                div(class="form-group")
+                label(class="col-sm-2 control-label") 角色名称
+                div(class="col-sm-4")
+                    input(class = "form-control" name=role.Name)
+script.
+    console.log(2);
+    function add(){
+        console.log(222);
+    }
